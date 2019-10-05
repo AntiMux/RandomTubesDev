@@ -43,19 +43,31 @@ const api_json = () => {
     return JSON.parse(value);
 };
 
+// function str_json(){
+//     let data = JSON.stringify(api_json());
+//     return data;
 
+// };
 
-let data = api_json();
+function get_all_ids(){
+    let array = [];
+    let json = api_json().items;
+    for (video in json){
+        array.push(json[video]["id"]["videoId"]);
+    }
+        
+    return array;
+}
 
-console.log(data.items[0])
+//let data = api_json();
 
-
+//console.log(data.items[0])
 
 
 const addText = () => {
     btn.addEventListener ('click', function() {
-        //videoLink.src ="https://www.youtube.com/embed/"+linkID;
-        //console.log(api_url());
+        videoLink.src ="https://www.youtube.com/embed/"+ getVideoId();
+        console.log(splitCookieToArray());
     });
 };
 
