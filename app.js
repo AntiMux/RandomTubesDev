@@ -66,7 +66,7 @@ function get_all_ids(){
 
 const addText = () => {
     btn.addEventListener ('click', function() {
-        videoLink.src ="https://www.youtube.com/embed/"+ getVideoId()+"?&autoplay=1";
+        videoLink.src ="https://www.youtube.com/embed/"+ getVideoId();
         console.log(splitCookieToArray());
     });
 };
