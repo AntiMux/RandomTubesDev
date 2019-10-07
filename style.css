@@ -2,15 +2,36 @@
     margin:  0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'News Cycle', sans-serif;
+    background: #0F1934;
 }
-
-.contaner , .video{
+.title-main {
+    font-family: fantasy;
+    font-size: 25px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+    
+    
+    background-color: rgba(0, 128, 0, 0.27);
+}
+.contaner{
     position: relative;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-top:100px; 
+    margin-top:200px; 
+}
+
+.video{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .show-text {
@@ -20,8 +41,50 @@
     font-size: 36px;
 }
 
-.contaner p {
-    margin-top:50px; 
-    
-}
+
+.ngy2_logo {
+            border-left: none;
+            padding-left: 0;
+            color: #fff !important;
+            font-weight: bold;
+        }
+        /* animated logo */
+        .ngy2_logo svg {
+            display: block;
+            letter-spacing: 25px;
+            font-size: 80px;
+        }
+        .ngy2_logo .text-copy {
+            fill: none;
+            stroke: #000;
+            stroke-dasharray: 6% 29%;
+            stroke-width: 0.5px;
+            stroke-dashoffset: 0%;
+            animation: stroke-offset 5.8s infinite linear;
+        }
+        .ngy2_logo .text-copy:nth-child(1) {
+            stroke: #23CB99;
+            animation-delay: -1;
+        }
+        .ngy2_logo .text-copy:nth-child(2) {
+            stroke: #46D6AB;
+            animation-delay: -2s;
+        }
+        .ngy2_logo .text-copy:nth-child(3) {
+            stroke: #23CB99;
+            animation-delay: -3s;
+        }
+        .ngy2_logo .text-copy:nth-child(4) {
+            stroke: #23CB99;
+            animation-delay: -4s;
+        }
+        .ngy2_logo .text-copy:nth-child(5) {
+            stroke: #23CB99;
+            animation-delay: -5s;
+        }
+        @keyframes stroke-offset {
+            100% {
+                stroke-dashoffset: -35%;
+            }
+        }
 
