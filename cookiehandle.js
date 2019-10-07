@@ -44,7 +44,9 @@ function getVideoId () {
 }
 
 
-
+if(document.cookie.indexOf('cookie_name=') == -1){
+    addSplitCookie();
+};
 
 // console.log(document.cookie);
 // console.log(get_link_from_cookie());
