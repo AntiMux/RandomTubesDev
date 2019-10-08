@@ -44,9 +44,16 @@ function getVideoId () {
 }
 
 
-if(document.cookie.indexOf('cookie_name=') == -1){
+if(document.cookie.indexOf('ids=') == -1){
     addSplitCookie();
 };
+
+
+function start_random(){
+    videoLink.src ="https://www.youtube.com/embed/"+ getVideoId()+"?&autoplay=1";
+}
+
+start_random();
 
 // console.log(document.cookie);
 // console.log(get_link_from_cookie());

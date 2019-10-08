@@ -3,7 +3,13 @@ const btn = document.querySelector ('.contaner button');
 var showText =document.querySelector ('.contaner p');   
 var videoLink = document.getElementById("theVideo");
 
+
+
 const apiKey = "AIzaSyCt6BCr5SN07CLxm83e5TfX1O06ccbPlI8";
+var random;
+
+
+
 
 
 function makeid(length) {
@@ -13,6 +19,7 @@ function makeid(length) {
     for ( var i = 0; i < length; i++ ) {
        result += characters.charAt(Math.floor(Math.random() * charactersLength));
     }
+    document.cookie = "random ="+result;
     return result;
  }
 
@@ -20,19 +27,7 @@ function makeid(length) {
 function api_url(){
     let url='https://www.googleapis.com/youtube/v3/search?key='+apiKey+'&maxResults=50&part=snippet&type=video&q='+makeid(4);
     return url;
-
 };
-
-
-
-// const api_json = async () => {
-//     const response = await fetch(api_url());
-//     const json = await response.json();
-//     return json;
-
-// };
-
-
 
 const api_json = () => {
     var value = $.getJSON({
@@ -43,26 +38,16 @@ const api_json = () => {
     return JSON.parse(value);
 };
 
-// function str_json(){
-//     let data = JSON.stringify(api_json());
-//     return data;
-
-// };
 
 function get_all_ids(){
     let array = [];
+    let array_clean = [];
     let json = api_json().items;
     for (video in json){
         array.push(json[video]["id"]["videoId"]);
     }
-        
     return array;
-}
-
-//let data = api_json();
-
-//console.log(data.items[0])
-
+};
 
 const addText = () => {
     btn.addEventListener ('click', function() {
