@@ -9,19 +9,185 @@
 body {
   height: 100vh;
   background: rgb(15, 25, 52);
-  background: radial-gradient(circle,
-      rgba(15, 25, 52, 1) 56%,
-      rgba(10, 16, 32, 1) 100%);
+  -webkit-transition: background-color 150ms ease-out !important;
+  transition: background-color 150ms ease-out !important;
+  font-family: 'Roboto', sans-serif;
+  color: white;
 }
 
-.contaner {
-  position: relative;
+nav {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  flex-direction: row;
+  justify-content: space-around;
   align-items: center;
-  margin: 30px;
+  background: rgb(7, 11, 24);
+  width: 100vw;
+  height: 80px;
+  border-bottom: 1px solid rgb(29, 29, 29);
+  -webkit-box-shadow: 0px -3px 10px 2px rgba(0, 0, 0, 0.12);
+  -moz-box-shadow: 0px -3px 10px 2px rgba(0, 0, 0, 0.12);
+  box-shadow: 0px -3px 10px 2px rgba(0, 0, 0, 0.12);
+  overflow: hidden;
+
 }
+
+.light-Navbackground {
+  background: #d8d8d8;
+  border-bottom: 1px solid rgb(204, 203, 203);
+}
+
+/* logo */
+.logo {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  right: 35%;
+}
+
+.ngy2_logo {
+  border-left: none;
+  padding-left: 0;
+  color: #fff !important;
+  font-weight: bold;
+}
+
+/* animated logo */
+.ngy2_logo svg {
+  letter-spacing: 5px;
+  font-size: 50px;
+  margin-top: -43px;
+}
+
+.ngy2_logo .text-copy {
+  fill: none;
+  stroke: #000;
+  stroke-dasharray: 8% 28%;
+  stroke-width: 1px;
+  stroke-dashoffset: 0%;
+  animation: stroke-offset 5.8s infinite linear;
+}
+
+.ngy2_logo .text-copy:nth-child(1) {
+  stroke: #47c2be;
+  animation-delay: -1;
+}
+
+.ngy2_logo .text-copy:nth-child(2) {
+  stroke: #47c2be;
+  animation-delay: -2s;
+}
+
+.ngy2_logo .text-copy:nth-child(3) {
+  stroke: #47c2be;
+  animation-delay: -3s;
+}
+
+.ngy2_logo .text-copy:nth-child(4) {
+  stroke: #47c2be;
+  animation-delay: -4s;
+}
+
+.ngy2_logo .text-copy:nth-child(5) {
+  stroke: #47c2be;
+  animation-delay: -5s;
+}
+
+@keyframes stroke-offset {
+  100% {
+    stroke-dashoffset: -35%;
+  }
+}
+
+/* mode button */
+.switchModeBtn {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: flex-end;
+  padding: 30px 80px;
+}
+
+.btnIcon {
+  text-align: center;
+  cursor: pointer;
+  background: none;
+  border: none;
+  color: white;
+  overflow: hidden;
+}
+
+.btnIcon:focus {
+  outline: 0;
+}
+
+.fa-moon,
+.fa-sun {
+  color: #47c2be;
+  padding: 7px;
+  font-size: 1.33em;
+}
+
+.hidden {
+  display: none;
+}
+
+.switchModeBtn small {
+  letter-spacing: 0.1px;
+  font-size: 13px;
+}
+
+.sunIcon small {
+  color: black;
+}
+
+.sunIcon,
+.moonIcon {
+  width: 95%;
+  height: 50px;
+  border-radius: 6px;
+}
+
+.moonIcon:hover {
+  background-color: rgba(230, 230, 230, 0.2);
+
+}
+
+.sunIcon:hover {
+  background-color: rgba(143, 143, 143, 0.2);
+}
+
+.light-background {
+  background-color: #e9e9e9;
+  -webkit-transition: background-color 150ms ease-out !important;
+  transition: background-color 150ms ease-out !important;
+}
+
+@keyframes moveInIcon {
+  0% {
+    transform: translateX(-25px);
+  }
+
+  50% {
+    transform: translateX(4px);
+  }
+
+  100% {
+    transform: translateX(0px);
+  }
+}
+
+@keyframes moveOuIcon {
+  0% {
+    transform: translateX(0px);
+  }
+
+  100% {
+    transform: translateX(40px);
+  }
+}
+
+/* video */
+
 
 .video {
   position: relative;
@@ -29,11 +195,13 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin: 65px auto;
+
 }
 
 #theVideo {
-  width: 845px;
-  height: 520px;
+  width: 990px;
+  height: 560px;
 }
 
 .btn {
@@ -41,7 +209,7 @@ body {
   height: 70px;
   position: relative;
   color: rgb(27, 27, 27);
-  background-color: rgb(40, 187, 143);
+  background-color: #47c2be;
   display: block;
   border: none;
   -webkit-border-radius: 50px;
@@ -53,8 +221,13 @@ body {
     0px 9px 25px rgba(255, 255, 255, 0.1);
   box-shadow: 0px 5px 0px rgba(1, 100, 70),
     0px 9px 25px rgba(255, 255, 255, 0.1);
-  margin: 80px auto;
+  margin: 70px auto;
   text-align: center;
+  font-size: 32px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: bold;
+  text-decoration: none;
+  letter-spacing: 1px;
 
   -webkit-transition: all 0.1s ease;
   -moz-transition: all 0.1s ease;
@@ -63,39 +236,31 @@ body {
   transition: all 0.1s ease;
 }
 
-.btnSpan {
-  font-size: 32px;
-  font-family: 'Roboto', sans-serif;
-  font-weight: bold;
-  text-decoration: none;
-  letter-spacing: 1px;
-}
 
 .btn:hover {
-  animation: rotate 0.7s ease-in-out both;
+  animation: rotate 0.8s ease-in-out;
 }
-
 
 
 @keyframes rotate {
   0% {
-    transform: rotate(0deg) translate3d(0, 0, 0);
+    transform: rotate(0deg);
   }
 
   25% {
-    transform: rotate(2deg) translate3d(0, 0, 0);
+    transform: rotate(2deg);
   }
 
   50% {
-    transform: rotate(-2deg) translate3d(0, 0, 0);
+    transform: rotate(-2deg);
   }
 
   75% {
-    transform: rotate(1deg) translate3d(0, 0, 0);
+    transform: rotate(1deg);
   }
 
   100% {
-    transform: rotate(0deg) translate3d(0, 0, 0);
+    transform: rotate(0deg);
   }
 
 }
@@ -115,62 +280,23 @@ button:focus {
   outline: 0;
 }
 
-.ngy2_logo {
-  border-left: none;
-  padding-left: 0;
-  color: #fff !important;
-  font-weight: bold;
-}
+@media screen and (max-width: 1554px) {
+  .logo {
+    right: 32%;
+  }
 
-/* animated logo */
-.ngy2_logo svg {
-  display: block;
-  letter-spacing: 5px;
-  font-size: 55px;
-  margin-top: -10px;
-}
-
-.ngy2_logo .text-copy {
-  fill: none;
-  stroke: #000;
-  stroke-dasharray: 6% 29%;
-  stroke-width: 0.7px;
-  stroke-dashoffset: 0%;
-  animation: stroke-offset 5.8s infinite linear;
-}
-
-.ngy2_logo .text-copy:nth-child(1) {
-  stroke: #23cb99;
-  animation-delay: -1;
-}
-
-.ngy2_logo .text-copy:nth-child(2) {
-  stroke: #46d6ab;
-  animation-delay: -2s;
-}
-
-.ngy2_logo .text-copy:nth-child(3) {
-  stroke: #23cb99;
-  animation-delay: -3s;
-}
-
-.ngy2_logo .text-copy:nth-child(4) {
-  stroke: #23cb99;
-  animation-delay: -4s;
-}
-
-.ngy2_logo .text-copy:nth-child(5) {
-  stroke: #23cb99;
-  animation-delay: -5s;
-}
-
-@keyframes stroke-offset {
-  100% {
-    stroke-dashoffset: -35%;
+  .ngy2_logo svg {
+    font-size: 38px;
   }
 }
 
+
 @media screen and (max-width: 1024px) {
+
+  .logo {
+    right: 34%;
+  }
+
   #theVideo {
     width: 795px;
     height: 550px;
@@ -181,16 +307,17 @@ button:focus {
     height: 70px;
     font-size: 30px;
   }
+
+  .ngy2_logo svg {
+    font-size: 40px;
+  }
 }
 
 @media screen and (max-width: 823px) {
-  * {
-    overflow: auto;
-  }
 
   #theVideo {
-    width: 400px;
-    height: 200px;
+    width: 600px;
+    height: 450px;
     margin: 0;
   }
 
@@ -198,21 +325,35 @@ button:focus {
     width: 300px;
     height: 70px;
     font-size: 30px;
+    margin-top: 90px;
   }
 
   .ngy2_logo svg {
-    font-size: 40px;
-    margin-top: 0;
+    font-size: 34px;
+    margin-top: -50px;
+  }
+
+  .ngy2_logo .text-copy {
+    stroke-width: 0.4px;
+  }
+
+  .logo {
+    right: 23%;
   }
 }
 
 @media screen and (max-width: 768px) {
   .ngy2_logo svg {
-    margin-top: 40px;
+    margin-top: -50px;
+    font-size: 30px;
+  }
+
+  .logo {
+    right: 30%;
   }
 
   #theVideo {
-    width: 695px;
+    width: 100%;
     height: 450px;
   }
 
@@ -221,24 +362,115 @@ button:focus {
     height: 70px;
     font-size: 30px;
   }
+
+  .switchModeBtn {
+    padding: 30px 65px;
+  }
+
+  .contaner {
+    margin: 40px;
+  }
 }
 
-@media screen and (max-width: 411px) {
+@media screen and (max-width: 655px) {
+  nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 130px;
+
+  }
+
+  .logo {
+    right: 140px;
+  }
+
+  .ngy2_logo svg {
+    font-size: 22px;
+  }
+
+  .switchModeBtn {
+    padding: 0;
+    position: relative;
+    top: -25px;
+  }
+
+  .fa-moon,
+  .fa-sun {
+    color: #47c2be;
+    padding-bottom: 0;
+    font-size: 1em;
+  }
+
+}
+
+
+
+@media screen and (max-width: 500px) {
+  nav {
+    height: 120px;
+  }
+
+  .logo {
+    right: 26%;
+  }
+
+  .switchModeBtn {
+    position: relative;
+    top: -20px;
+  }
+
+  .btn {
+    width: 250px;
+    height: 60px;
+    font-size: 25px;
+  }
+
+  .video {
+    margin: 40px auto;
+  }
+
+}
+
+@media screen and (max-width: 435px) {
+  .ngy2_logo svg {
+    font-size: 16px;
+
+  }
+
   #theVideo {
     width: 340px;
     height: 300px;
-    margin: 20px;
   }
+
+  .video {
+    margin: 20px auto;
+  }
+
 
   .btn {
     width: 250px;
     height: 50px;
     font-size: 25px;
-    margin: 60px auto;
+    margin: 50px auto;
   }
 
-  .ngy2_logo svg {
-    font-size: 40px;
-    margin-top: 0;
+}
+
+@media screen and (max-width: 320px) {
+  #theVideo {
+    width: 340px;
+    height: 260px;
+  }
+
+  .video {
+    margin: 0 auto;
+  }
+
+  .btn {
+    width: 200px;
+    height: 50px;
+    font-size: 25px;
+    margin: 40px auto;
   }
 }

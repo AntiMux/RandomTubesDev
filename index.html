@@ -1,23 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <link
-      href="https://fonts.googleapis.com/css?family=Roboto&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href=".//style.css" />
-    <title>RandonTubes.net</title>
-  </head>
 
-  <body>
-    <nav>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href=".//style.css" />
+  <link rel="stylesheet" href=".//darkLightModeBtn.css" />
+  <script src="https://kit.fontawesome.com/ff853e55a3.js" crossorigin="anonymous"></script>
+  <title>RandonTubes.net</title>
+</head>
+
+<body>
+  <nav>
+    <div class="logo">
       <span class="ngy2_color2 ngy2_logo">
-        <svg height="130" width="100%">
+        <svg height="120" width="100%">
           <symbol id="s-text">
-            <text text-anchor="middle" x="50%" y="100">RandomTubes</text>
+            <text class="svgText" text-anchor="right" x="45%" y="100">RandomTubes</text>
           </symbol>
           <g class="g-ants">
             <use xlink:href="#s-text" class="text-copy"></use>
@@ -28,27 +29,35 @@
           </g>
         </svg>
       </span>
-    </nav>
-
-    <div class="contaner">
-      <div class="video">
-        <iframe
-          id="theVideo"
-          src=""
-          frameborder="0"
-          allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen
-        ></iframe>
-      </div>
-
-      <button class="btn">
-        <span class="btnSpan">Click Me!</span>
-      </button>
-      <p></p>
     </div>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src=".//app.js"></script>
-    <script src=".//cookiehandle.js"></script>
-  </body>
+    <div class="switchModeBtn">
+      <button class="btnIcon">
+        <div class="moonIcon">
+          <i class="fas fa-moon" id="moonIcon"></i> <small>Dark</small>
+        </div>
+        <div class="sunIcon hidden">
+          <i class="fas fa-sun" id="sunIcon"></i> <small>Light</small>
+        </div>
+      </button>
+    </div>
+  </nav>
+
+  <div class="contaner">
+    <div class="video">
+      <iframe id="theVideo" src="" frameborder="0"
+        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+
+    <button class="btn">Click Me!</button>
+    <p></p>
+  </div>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src=".//app.js"></script>
+  <script src=".//darkLightModeBtn.js"></script>
+
+  <script src=".//cookiehandle.js"></script>
+</body>
+
 </html>
