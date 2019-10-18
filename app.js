@@ -6,7 +6,6 @@ var videoLink3 = document.getElementById("theVideo3");
 var videoLink4 = document.getElementById("theVideo4");
 var videoLink5 = document.getElementById("theVideo5");
 
-console.log(videoLink)
 
 const apiKey = "AIzaSyCB-ju7msA92oEwsNiwbbqlKPtAVi_khF0";
 var random;
@@ -71,19 +70,7 @@ addText();
 
 
 // To The Top Function
-window.onscroll = function () {
-  scrollFunction()
-};
 
-function scrollFunction() {
-  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-    btn.style.display = "block";
-  } else {
-    btn.style.display = "none";
-  }
-}
-
-// When the user clicks on the button, scroll to the top of the document
 function topFunction() {
   document.body.scrollTop = 0;
   document.documentElement.scrollTop = 0;

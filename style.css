@@ -379,6 +379,12 @@ button:focus {
     width: 210px;
   }
 
+  .fa-moon,
+  .fa-sun {
+    margin-top: 8px;
+    font-size: 1em;
+  }
+
   .btn {
     position: relative;
     width: 250px;
