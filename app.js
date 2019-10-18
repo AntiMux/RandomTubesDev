@@ -45,7 +45,7 @@ function get_all_ids() {
 }
 
 const addText = () => {
-  btn.addEventListener("click", function() {
+  btn.addEventListener("click", function () {
     videoLink.src =
       "https://www.youtube.com/embed/" + getVideoId() + "?&autoplay=1";
     console.log(splitCookieToArray());
@@ -53,3 +53,21 @@ const addText = () => {
 };
 
 addText();
+
+// Logo Animation //
+document.addEventListener('DOMContentLoaded', () => {
+  function animateSgv(id, delay, delayIncrement) {
+    const logo = document.getElementById(id);
+    const logoPaths = document.querySelectorAll(`#${id} path`);
+    delay = delay;
+    for (let i = 0; i < logoPaths.length; i++) {
+      //console.log(logoPaths[i].getTotalLength());
+      logoPaths[i].style.strokeDasharray = logoPaths[i].getTotalLength();
+      logoPaths[i].style.strokeDashoffset = logoPaths[i].getTotalLength();
+      logoPaths[i].style.animation = `line-anim 2s ease forwards ${delay}s`;
+      delay += delayIncrement;
+    }
+    logo.style.animation = `fill 0.5s ease forwards 4.8s`;
+  }
+  animateSgv('logo', 0, 0.3)
+}, false);
