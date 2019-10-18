@@ -1,3 +1,7 @@
+html {
+  scroll-behavior: smooth;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -149,12 +153,13 @@ nav {
 
 /* video */
 
+.hiddenVideo {
+  display: none;
+}
+
 .video {
   position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  text-align: center;
   margin: 65px auto;
 }
 
@@ -164,6 +169,8 @@ nav {
 }
 
 .btn {
+  position: relative;
+  text-align: center;
   width: 300px;
   height: 70px;
   position: relative;
@@ -248,6 +255,25 @@ button:focus {
   }
 }
 
+@media only screen and (max-width: 1024px) and (orientation: landscape) {
+  #theVideo {
+    width: 100%;
+    height: 400px;
+    margin: 0;
+  }
+
+  .btn {
+    width: 300px;
+    height: 70px;
+    font-size: 30px;
+    margin-top: 55px;
+  }
+
+  .contaner {
+    margin: auto 70px;
+  }
+}
+
 @media screen and (max-width: 840px) {
   #theVideo {
     width: 600px;
@@ -263,41 +289,78 @@ button:focus {
   }
 }
 
-@media screen and (max-width: 768px) {
+@media only screen and (max-width: 840px) and (orientation: landscape) {
+  * {
+    overflow: visible;
+  }
+  nav {
+    height: 60px;
+  }
+
   .logo svg {
-    width: 230px;
+    width: 180px;
+  }
+  .fa-moon,
+  .fa-sun {
+    margin-top: 4px;
+    font-size: 1em;
+  }
+
+  .contaner {
+    position: relative;
+    top: -30px;
   }
 
   #theVideo {
     width: 90%;
-    height: 450px;
+    height: 190px;
   }
 
   .btn {
-    width: 300px;
-    height: 70px;
-    font-size: 30px;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 0;
+    width: 220px;
+    height: 50px;
+    font-size: 25px;
   }
 }
 
-@media screen and (max-width: 655px) {
-  /* nav {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    height: 170px;
-    padding: 10px;
-  } */
+@media only screen and (max-width: 768px) and (orientation: landscape) {
+  .contaner {
+    position: absolute;
+    left: 50%;
+    top: 6%;
+    transform: translate(-70%, 0);
+  }
 
+  #theVideo {
+    width: 400px;
+    height: 220px;
+  }
+
+  .btn {
+    position: absolute;
+    top: 73%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 220px;
+    height: 50px;
+    font-size: 25px;
+  }
+}
+
+@media screen and (max-width: 685px) {
   .logo path {
     stroke-width: 3;
   }
-  /* .switchModeBtn {
-    position: relative;
-    top: -20px;
-    padding: 0;
-  } */
 
+  #theVideo {
+    width: 70%;
+    height: 450px;
+  }
   .fa-moon,
   .fa-sun {
     font-size: 1.4em;
@@ -305,6 +368,9 @@ button:focus {
 }
 
 @media screen and (max-width: 500px) {
+  * {
+    overflow: visible;
+  }
   nav {
     height: 70px;
   }
@@ -314,13 +380,44 @@ button:focus {
   }
 
   .btn {
+    position: relative;
     width: 250px;
     height: 60px;
     font-size: 25px;
+    top: -70px;
+  }
+
+  .contaner {
+    text-align: center;
   }
 
   .video {
-    margin: 40px auto;
+    margin: 30px 0;
+  }
+
+  #theVideo {
+    margin-top: 30px;
+  }
+
+  #theVideo,
+  #theVideo3,
+  #theVideo2,
+  #theVideo4,
+  #theVideo5 {
+    width: 100% !important;
+    height: 300px !important;
+    padding-bottom: 60px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.288);
+  }
+
+  #theVideo5 {
+    border: none;
+  }
+
+  .hiddenVideo {
+    display: inline-block;
+    width: 100% !important;
+    height: 300px !important;
   }
 }
 
