@@ -373,6 +373,7 @@ button:focus {
   }
   nav {
     height: 70px;
+    padding: 20px;
   }
 
   .logo svg {
