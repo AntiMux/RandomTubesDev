@@ -7,13 +7,10 @@ firebase.initializeApp({
   
 var db = firebase.firestore();
 
-function get_firebase_data(collection_name,document_name){
+function get_firebase_data_promise(collection_name,document_name){
     let firebase_doc = db.collection(collection_name).doc(document_name);
-    firebase_doc.get().then(function(doc){
-        console.log(doc.data());
-    })
+    return firebase_doc.get()
 };
-
 
 function set_firebase_data_all(){
     let array = get_all_ids_and_names()
@@ -25,17 +22,29 @@ function set_firebase_data_all(){
     db.collection("all").doc("all").set(to_update,{merge:true})
 };
 
-function getsomething(){
-    let array = get_all_ids_and_names()
-    let to_update = {};
-    console.log(array)
-    for (video in array){
-        to_update[array[video]["id"]] = array[video]["name"];
-    }
-    console.log(to_update)
+function get_random_videos(number){
+    
+    get_firebase_data_promise("all","all").then(function(data){
+        video_list = data.data();
+        list_size = Object.keys(video_list).length;
+        random_numbers = [];
+        random_videos = [];
+        while(random_numbers.length < number){
+            num = Math.floor(Math.random() * list_size)
+            if (random_numbers.includes(num) == false){
+                random_numbers.push(num);
+            };
+        };
+        for (i in random_numbers){
+            let key = Object.keys(video_list)[random_numbers[i]];
+            let value = Object.values(video_list)[random_numbers[i]];
+            key_value = {[key] : value};
+            random_videos.push(key_value);
+
+        };
+        console.log(random_videos);
+        localStorage.setItem('random_videos', JSON.stringify(random_videos));
+    })
 };
 
-set_firebase_data_all()
-
-// get_firebase_data("music","all")
-// set_firebase_data("all","all","dzwWymbIqMQ")
+//get_random_videos(5)
