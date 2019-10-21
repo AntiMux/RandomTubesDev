@@ -12,10 +12,9 @@ function update_local_storage(number){
     }
 }
 
-
 function getFirstItemFromLS() {
     let lSData = JSON.parse(localStorage.getItem("random_videos"));
-    let first =lSData[0];
+    let first = lSData[0];
     return first;
     // let key = Object.keys(first)[0];
     // let value = first[key];
@@ -48,7 +47,6 @@ function start_random(){
 
 var link = getParameterByName('link');
 if(link == null){
-    update_local_storage(videos_number);
     start_random();
 }
 else{
