@@ -8,6 +8,3 @@ function getParameterByName(name, url) {
     return decodeURIComponent(results[2].replace(/\+/g, ' '));
 }
 
-var link = getParameterByName('link');
-
-console.log(link)

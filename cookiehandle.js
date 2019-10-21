@@ -1,4 +1,3 @@
-//document.cookie = "ids = "+ get_all_ids();
 
 const joinArray = () => {
     let joinArray = get_all_ids();
@@ -53,12 +52,10 @@ function start_random(){
     videoLink.src ="https://www.youtube.com/embed/"+ getVideoId()+"?&autoplay=1";
 }
 
-start_random();
-
-// console.log(document.cookie);
-// console.log(get_link_from_cookie());
-// console.log(document.cookie);
-// console.log(splitCookieToArray());
-
-// let cook = document.cookie;
-// console.log(cook);
+var link = getParameterByName('link');
+if(link == null){
+    start_random();
+}
+else{
+    videoLink.src ="https://www.youtube.com/embed/"+ link+"?&autoplay=1";
+}
