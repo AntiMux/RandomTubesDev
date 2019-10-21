@@ -42,9 +42,7 @@ function get_random_videos(number){
             random_videos.push(key_value);
 
         };
-        console.log(random_videos);
         localStorage.setItem('random_videos', JSON.stringify(random_videos));
     })
 };
 
-//get_random_videos(5)

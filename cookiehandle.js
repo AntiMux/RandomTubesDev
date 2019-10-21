@@ -48,14 +48,3 @@ if(document.cookie.indexOf('ids=') == -1){
 };
 
 
-function start_random(){
-    videoLink.src ="https://www.youtube.com/embed/"+ getVideoId()+"?&autoplay=1";
-}
-
-var link = getParameterByName('link');
-if(link == null){
-    start_random();
-}
-else{
-    videoLink.src ="https://www.youtube.com/embed/"+ link+"?&autoplay=1";
-}
