@@ -1,6 +1,6 @@
 const btn = document.querySelector ('.contaner button');
 var videoLink = document.getElementById("theVideo");
-var videoTitle =document.querySelector ('.contaner h2');
+var videoTitle = document.querySelector ('.contaner h2');
 
 
 const apiKey = "AIzaSyCB-ju7msA92oEwsNiwbbqlKPtAVi_khF0";
@@ -8,18 +8,18 @@ var random;
 
 
 function makeid(length) {
-    var result           = '';
-    var characters       = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+    var result = '';
+    var characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
     var charactersLength = characters.length;
-    for ( var i = 0; i < length; i++ ) {
-       result += characters.charAt(Math.floor(Math.random() * charactersLength));
+    for (var i = 0; i < length; i++) {
+        result += characters.charAt(Math.floor(Math.random() * charactersLength));
     }
-    document.cookie = "random ="+result;
+    document.cookie = "random =" + result;
     return result;
- }
+}
 
 function api_url(){
-    let url='https://www.googleapis.com/youtube/v3/search?key='+apiKey+'&maxResults=50&part=snippet&type=video&q='+makeid(4);
+    let url='https://www.googleapis.com/youtube/v3/search?key=' + apiKey + '&maxResults=50&part=snippet&type=video&q=' + makeid(4);
     return url;
 };
 
@@ -56,11 +56,11 @@ function get_all_ids_and_names(){
     return array;
 };
 
-function get_all_ids(){
+function get_all_ids() {
     let array = [];
     let array_clean = [];
     let json = api_json().items;
-    for (video in json){
+    for (video in json) {
         array.push(json[video]["id"]["videoId"]);
     }
     return array;
