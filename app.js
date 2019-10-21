@@ -37,6 +37,29 @@ const api_json = () => {
     return JSON.parse(value);
 };
 
+function get_all_videos_data(){
+    let array = [];
+    let array_clean = [];
+    let json = api_json().items;
+    for (video in json){
+        array.push(json[video]);
+    }
+    return array;
+};
+
+function get_all_ids_and_names(){
+    let array = [];
+    let json = api_json().items;
+
+    for (video in json){
+        array.push({
+            id: json[video]["id"]["videoId"],
+            name: json[video]["snippet"]["title"]
+        })
+    }
+
+    return array;
+};
 
 function get_all_ids() {
     let array = [];
