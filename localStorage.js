@@ -35,6 +35,7 @@ function updateVideoAndTitle() {
     let final_value = clean_value.replace(/&quot;/g,"\"")
     videoLink.src ="https://www.youtube.com/embed/"+ key+"?&autoplay=1";
     videoTitle.textContent =  final_value;
+    localStorage.setItem('current_video', JSON.stringify(key));
     removeFirstItemFromLS()
 }
 
