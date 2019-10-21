@@ -1,14 +1,10 @@
-const btn = document.querySelector('.contaner button');
-var showText = document.querySelector('.contaner p');
+const btn = document.querySelector ('.contaner button');
 var videoLink = document.getElementById("theVideo");
-
+var videoTitle = document.querySelector ('.contaner h2');
 
 
 const apiKey = "AIzaSyCB-ju7msA92oEwsNiwbbqlKPtAVi_khF0";
 var random;
-
-
-
 
 
 function makeid(length) {
@@ -22,9 +18,8 @@ function makeid(length) {
     return result;
 }
 
-
-function api_url() {
-    let url = 'https://www.googleapis.com/youtube/v3/search?key=' + apiKey + '&maxResults=50&part=snippet&type=video&q=' + makeid(4);
+function api_url(){
+    let url='https://www.googleapis.com/youtube/v3/search?key=' + apiKey + '&maxResults=50&part=snippet&type=video&q=' + makeid(4);
     return url;
 };
 
@@ -71,11 +66,11 @@ function get_all_ids() {
     return array;
 };
 
-const addText = () => {
-    btn.addEventListener('click', function () {
-        videoLink.src = "https://www.youtube.com/embed/" + getVideoId() + "?&autoplay=1";
-        console.log(splitCookieToArray());
+const Click = () => {
+    btn.addEventListener ('click', function() {
+        // videoLink.src ="https://www.youtube.com/embed/"+ getVideoId()+"?&autoplay=1";
+        updateVideoAndTitle();
     });
 };
 
-addText();
+Click();
