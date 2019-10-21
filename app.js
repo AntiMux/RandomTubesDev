@@ -1,10 +1,7 @@
 const btn = document.querySelector(".contaner button");
 var showText = document.querySelector(".contaner p");
 var videoLink = document.getElementById("theVideo");
-var videoLink2 = document.getElementById("theVideo2");
-var videoLink3 = document.getElementById("theVideo3");
-var videoLink4 = document.getElementById("theVideo4");
-var videoLink5 = document.getElementById("theVideo5");
+
 
 
 const apiKey = "AIzaSyCB-ju7msA92oEwsNiwbbqlKPtAVi_khF0";
@@ -53,16 +50,6 @@ const addText = () => {
   btn.addEventListener("click", function () {
     videoLink.src =
       "https://www.youtube.com/embed/" + getVideoId() + "?autoplay=1";
-    videoLink2.src =
-      "https://www.youtube.com/embed/" + getVideoId() + "?autoplay=1";
-    videoLink3.src =
-      "https://www.youtube.com/embed/" + getVideoId() + "?autoplay=1";
-    videoLink4.src =
-      "https://www.youtube.com/embed/" + getVideoId() + "?autoplay=1";
-    videoLink5.src =
-      "https://www.youtube.com/embed/" + getVideoId() + "?autoplay=1";
-
-    console.log(splitCookieToArray());
   });
 };
 

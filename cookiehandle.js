@@ -49,10 +49,6 @@ if (document.cookie.indexOf('ids=') == -1) {
 
 function start_random() {
     videoLink.src = "https://www.youtube.com/embed/" + getVideoId() + "?&autoplay=1";
-    videoLink2.src = "https://www.youtube.com/embed/" + getVideoId() + "?&autoplay=1";
-    videoLink3.src = "https://www.youtube.com/embed/" + getVideoId() + "?&autoplay=1";
-    videoLink4.src = "https://www.youtube.com/embed/" + getVideoId() + "?&autoplay=1";
-    videoLink5.src = "https://www.youtube.com/embed/" + getVideoId() + "?&autoplay=1";
 }
 
 start_random();
