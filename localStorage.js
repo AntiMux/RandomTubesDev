@@ -1,3 +1,6 @@
+const videos_number = 50;
+
+
 function update_local_storage(number){
     let local_data = JSON.parse(localStorage.getItem("random_videos"));
     if(local_data == null){
@@ -27,7 +30,7 @@ function removeFirstItemFromLS() {
 
 }
 function updateVideoAndTitle() {
-    update_local_storage(50);
+    update_local_storage(videos_number);
     let video = getFirstItemFromLS();
     let key = Object.keys(video)[0];
     let value = video[key];
@@ -53,4 +56,4 @@ else{
 }
 
 
-update_local_storage(50);
+update_local_storage(videos_number);
