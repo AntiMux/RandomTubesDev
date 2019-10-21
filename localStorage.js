@@ -1,5 +1,4 @@
 const videos_number = 50;
-update_local_storage(videos_number);
 
 function update_local_storage(number){
     let local_data = JSON.parse(localStorage.getItem("random_videos"));
@@ -49,6 +48,7 @@ function start_random(){
 
 var link = getParameterByName('link');
 if(link == null){
+    update_local_storage(videos_number);
     start_random();
 }
 else{
