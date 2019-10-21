@@ -2,9 +2,11 @@ function update_local_storage(number){
     let local_data = JSON.parse(localStorage.getItem("random_videos"));
     if(local_data == null){
         get_random_videos(number);
+        set_firebase_data_all()
     }
     else if(Object.entries(local_data).length <= 1){
         get_random_videos(number);
+        set_firebase_data_all()
     }
 }
 
@@ -29,8 +31,10 @@ function updateVideoAndTitle() {
     let video = getFirstItemFromLS();
     let key = Object.keys(video)[0];
     let value = video[key];
+    let clean_value = value.replace(/&#39;/g,"'")
+    let final_value = clean_value.replace(/&quot;/g,"\"")
     videoLink.src ="https://www.youtube.com/embed/"+ key+"?&autoplay=1";
-    videoTitle.textContent = value;
+    videoTitle.textContent =  final_value;
     removeFirstItemFromLS()
 }
 

@@ -15,7 +15,6 @@ function get_firebase_data_promise(collection_name,document_name){
 function set_firebase_data_all(){
     let array = get_all_ids_and_names()
     let to_update = {};
-    console.log(array)
     for (video in array){
         to_update[array[video]["id"]] = array[video]["name"];
     }
