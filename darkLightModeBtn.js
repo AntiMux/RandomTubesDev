@@ -1,6 +1,8 @@
 var btnIcon = document.querySelector(".btnIcon");
 
 btnIcon.addEventListener('click', function () {
+    var shareLink = document.querySelector(".shareLink");
+    var shareIcon = document.querySelector(".shareIcon");
     var sunIcon = document.querySelector(".sunIcon");
     var moonIcon = document.querySelector(".moonIcon");
     var backgroundMode = document.querySelector("body");
@@ -10,6 +12,8 @@ btnIcon.addEventListener('click', function () {
     if (sunIcon.classList.contains("hidden")) {
         backgroundMode.classList.add("light-background");
         navdMode.classList.add("light-Navbackground");
+        shareLink.classList.add("shareLink-light");
+        shareIcon.classList.add("shareLink-light");
         moon.style.animation = "moveOuIcon 0.4s ease";
 
         setTimeout(function () {
@@ -21,6 +25,8 @@ btnIcon.addEventListener('click', function () {
 
     } else {
         backgroundMode.classList.remove("light-background");
+        shareLink.classList.remove("shareLink-light");
+        shareIcon.classList.remove("shareLink-light");
         navdMode.classList.remove("light-Navbackground");
         sun.style.animation = "moveOuIcon 0.4s ease";
         setTimeout(function () {

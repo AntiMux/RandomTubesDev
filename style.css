@@ -16,7 +16,7 @@ body {
   -webkit-transition: background-color 150ms ease-out !important;
   transition: background-color 150ms ease-out !important;
   font-family: "Roboto", sans-serif;
-  color: white;
+  color: rgb(221, 221, 221);
 }
 
 nav {
@@ -27,7 +27,7 @@ nav {
   align-items: center;
   background: rgb(3, 4, 8);
   width: 100vw;
-  height: 80px;
+  height: 70px;
   border-bottom: 1px solid rgb(29, 29, 29);
   -webkit-box-shadow: 0px -3px 10px 2px rgba(0, 0, 0, 0.12);
   -moz-box-shadow: 0px -3px 10px 2px rgba(0, 0, 0, 0.12);
@@ -122,9 +122,10 @@ nav {
 }
 
 .light-background {
-  background-color: #e9e9e9;
+  background-color: #eeeeee;
   -webkit-transition: background-color 150ms ease-out !important;
   transition: background-color 150ms ease-out !important;
+  color: rgb(66, 66, 66);
 }
 
 @keyframes moveInIcon {
@@ -153,30 +154,77 @@ nav {
 
 /* video */
 
-.hiddenVideo {
-  display: none;
-}
-
-.video {
-  position: relative;
-  text-align: center;
-  margin: 65px auto;
+.contaner {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 50px auto;
+  width: 990px;
 }
 
 #theVideo {
   width: 990px;
-  height: 560px;
+  height: 540px;
+}
+
+.titltAndShare {
+  width: 990px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 25px 0;
+}
+
+.videoTitle {
+  align-self: flex-start;
+  font-weight: normal;
+  letter-spacing: 0.2px;
+  font-size: 24px;
+  width: 600px;
+}
+
+.share {
+  display: flex;
+  align-items: center;
+  align-self: center;
+}
+
+.shareIcon {
+  box-sizing: border-box;
+  text-align: center;
+  padding: 8px 20px;
+  background-color: rgba(82, 106, 151, 0.144);
+  border: 1px solid rgba(95, 95, 95, 0.514);
+  border-right: none;
+}
+.shareLink {
+  box-sizing: border-box;
+  text-align: center;
+  padding: 11px 30px;
+  background-color: rgba(82, 106, 151, 0.144);
+  border: 1px solid rgba(95, 95, 95, 0.514);
+  font-size: 16px;
+  color: rgb(221, 221, 221);
+  letter-spacing: 0.5px;
+  font-weight: lighter;
+}
+
+.fa-share-alt {
+  margin-top: 4px;
+}
+
+.shareLink-light {
+  color: rgb(66, 66, 66);
+  background-color: rgb(221, 221, 221);
+  border-color: rgba(134, 134, 134, 0.514);
 }
 
 .btn {
-  position: relative;
-  text-align: center;
   width: 300px;
   height: 70px;
-  position: relative;
   color: rgb(27, 27, 27);
   background-color: #02cb9f;
-  display: block;
   border: none;
   -webkit-border-radius: 50px;
   -moz-border-radius: 50px;
@@ -187,7 +235,7 @@ nav {
     0px 9px 25px rgba(255, 255, 255, 0.1);
   box-shadow: 0px 5px 0px rgba(1, 100, 70),
     0px 9px 25px rgba(255, 255, 255, 0.1);
-  margin: 70px auto;
+  margin: 40px auto;
   text-align: center;
   font-size: 32px;
   font-family: "Roboto", sans-serif;
@@ -243,9 +291,27 @@ button:focus {
 }
 
 @media screen and (max-width: 1024px) {
+  nav {
+    margin-bottom: 50px;
+  }
+  .contaner {
+    align-items: center;
+    justify-content: center;
+    width: 80%;
+    margin: auto;
+  }
+
+  .videoTitle {
+    font-size: 24px;
+  }
+
   #theVideo {
-    width: 795px;
-    height: 550px;
+    width: 100%;
+    height: 540px;
+  }
+
+  .titltAndShare {
+    width: 100%;
   }
 
   .btn {
@@ -264,28 +330,46 @@ button:focus {
 
   .btn {
     width: 300px;
-    height: 70px;
+    height: 60px;
     font-size: 30px;
-    margin-top: 55px;
-  }
-
-  .contaner {
-    margin: auto 70px;
+    margin-top: 25px;
   }
 }
 
-@media screen and (max-width: 840px) {
+@media screen and (max-width: 992px) {
+  .contaner {
+    align-items: center;
+    justify-content: center;
+    width: 95%;
+    margin: auto;
+  }
+
   #theVideo {
-    width: 600px;
-    height: 450px;
-    margin: 0;
+    width: 100%;
+    height: 540px;
+  }
+
+  .titltAndShare {
+    width: 100%;
+    display: inline-block;
+  }
+  .share {
+    margin-top: 20px;
+  }
+
+  .shareLink {
+    width: 100%;
+    text-align: start;
   }
 
   .btn {
     width: 300px;
     height: 70px;
     font-size: 30px;
-    margin-top: 90px;
+  }
+
+  .videoTitle {
+    width: 100%;
   }
 }
 
@@ -358,7 +442,7 @@ button:focus {
   }
 
   #theVideo {
-    width: 70%;
+    width: 100%;
     height: 450px;
   }
   .fa-moon,
@@ -385,52 +469,22 @@ button:focus {
     margin-top: 8px;
     font-size: 1em;
   }
+  .shareIcon {
+    padding: 9px 20px;
+  }
 
   .btn {
     position: relative;
     width: 250px;
     height: 60px;
     font-size: 25px;
-    top: -70px;
-  }
-
-  .contaner {
-    text-align: center;
-  }
-
-  .video {
-    margin: 30px 0;
-  }
-
-  #theVideo {
-    margin-top: 30px;
-  }
-
-  #theVideo,
-  #theVideo3,
-  #theVideo2,
-  #theVideo4,
-  #theVideo5 {
-    width: 100% !important;
-    height: 300px !important;
-    padding-bottom: 60px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.288);
-  }
-
-  #theVideo5 {
-    border: none;
-  }
-
-  .hiddenVideo {
-    display: inline-block;
-    width: 100% !important;
-    height: 300px !important;
+    top: -30px;
   }
 }
 
 @media screen and (max-width: 435px) {
   #theVideo {
-    width: 80%;
+    width: 100%;
     height: 250px;
   }
 
@@ -448,8 +502,15 @@ button:focus {
 @media screen and (max-width: 355px) {
   nav {
     padding: 20px;
+    margin-bottom: 20px;
+  }
+  #theVideo {
+    height: 230px;
   }
   .logo svg {
     width: 150px;
+  }
+  .btn {
+    margin: 40px auto;
   }
 }

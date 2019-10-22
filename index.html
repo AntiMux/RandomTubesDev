@@ -98,7 +98,6 @@
     </nav>
 
     <div class="contaner">
-      <div class="video">
         <iframe
           id="theVideo"
           src=""
@@ -106,10 +105,16 @@
           allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
           allowfullscreen
         ></iframe>
+      <div class="titltAndShare">
+        <h2 class="videoTitle"></h2>
+        <div class="share">
+            <span class="shareIcon"><i class="fas fa-share-alt"></i></span>
+            <input type="text" class="shareLink" id="shareLink" placeholder="Link to this video" value="http://randomtubes.net" readonly>
+
+
+        </div>
       </div>
-      <h2 class="videoTitle"></h2>
       <button onclick="topFunction()" class="btn">Click Me!</button>
-      <p></p>
     </div>
 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
