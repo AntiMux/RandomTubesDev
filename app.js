@@ -70,6 +70,8 @@ const Click = () => {
   btn.addEventListener('click', function () {
     // videoLink.src ="https://www.youtube.com/embed/"+ getVideoId()+"?&autoplay=1";
     updateVideoAndTitle();
+    removeVideo();
+    addMultipleVideos(4);
   });
 };
 

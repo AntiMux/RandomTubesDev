@@ -163,9 +163,16 @@ nav {
   width: 990px;
 }
 
-#theVideo {
+.theVideo {
   width: 990px;
   height: 540px;
+  border: none;
+}
+
+.new {
+  margin: 45px 0;
+  border-top: 1px solid rgba(153, 153, 153, 0.418);
+  padding-top: 70px;
 }
 
 .titltAndShare {
@@ -198,6 +205,7 @@ nav {
   border: 1px solid rgba(95, 95, 95, 0.514);
   border-right: none;
 }
+
 .shareLink {
   box-sizing: border-box;
   text-align: center;
@@ -291,9 +299,14 @@ button:focus {
 }
 
 @media screen and (max-width: 1024px) {
+  * {
+    overflow: visible;
+  }
+
   nav {
     margin-bottom: 50px;
   }
+
   .contaner {
     align-items: center;
     justify-content: center;
@@ -305,7 +318,7 @@ button:focus {
     font-size: 24px;
   }
 
-  #theVideo {
+  .theVideo {
     width: 100%;
     height: 540px;
   }
@@ -318,11 +331,12 @@ button:focus {
     width: 300px;
     height: 70px;
     font-size: 30px;
+    margin-bottom: 100px;
   }
 }
 
 @media only screen and (max-width: 1024px) and (orientation: landscape) {
-  #theVideo {
+  .theVideo {
     width: 100%;
     height: 400px;
     margin: 0;
@@ -344,7 +358,7 @@ button:focus {
     margin: auto;
   }
 
-  #theVideo {
+  .theVideo {
     width: 100%;
     height: 540px;
   }
@@ -353,6 +367,7 @@ button:focus {
     width: 100%;
     display: inline-block;
   }
+
   .share {
     margin-top: 20px;
   }
@@ -377,6 +392,7 @@ button:focus {
   * {
     overflow: visible;
   }
+
   nav {
     height: 60px;
   }
@@ -384,6 +400,7 @@ button:focus {
   .logo svg {
     width: 180px;
   }
+
   .fa-moon,
   .fa-sun {
     margin-top: 4px;
@@ -395,7 +412,7 @@ button:focus {
     top: -30px;
   }
 
-  #theVideo {
+  .theVideo {
     width: 90%;
     height: 190px;
   }
@@ -420,7 +437,7 @@ button:focus {
     transform: translate(-70%, 0);
   }
 
-  #theVideo {
+  .theVideo {
     width: 400px;
     height: 220px;
   }
@@ -441,10 +458,11 @@ button:focus {
     stroke-width: 3;
   }
 
-  #theVideo {
+  .theVideo {
     width: 100%;
     height: 450px;
   }
+
   .fa-moon,
   .fa-sun {
     font-size: 1.4em;
@@ -455,9 +473,26 @@ button:focus {
   * {
     overflow: visible;
   }
+
+  .contaner {
+    width: 100%;
+  }
+
+  .new {
+    margin: 25px 0;
+    border-top: 1px solid rgba(153, 153, 153, 0.418);
+    padding-top: 40px;
+  }
+
+  .titltAndShare {
+    width: 95%;
+    margin: 15px 10px;
+  }
+
   nav {
     height: 70px;
     padding: 20px;
+    margin-bottom: 30px;
   }
 
   .logo svg {
@@ -469,6 +504,7 @@ button:focus {
     margin-top: 8px;
     font-size: 1em;
   }
+
   .shareIcon {
     padding: 9px 20px;
   }
@@ -483,7 +519,7 @@ button:focus {
 }
 
 @media screen and (max-width: 435px) {
-  #theVideo {
+  .theVideo {
     width: 100%;
     height: 250px;
   }
@@ -494,6 +530,7 @@ button:focus {
     font-size: 25px;
     margin: 50px auto;
   }
+
   .logo svg {
     width: 180px;
   }
@@ -504,12 +541,15 @@ button:focus {
     padding: 20px;
     margin-bottom: 20px;
   }
+
   #theVideo {
     height: 230px;
   }
+
   .logo svg {
     width: 150px;
   }
+
   .btn {
     margin: 40px auto;
   }
