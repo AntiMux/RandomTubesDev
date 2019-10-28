@@ -102,3 +102,13 @@ document.addEventListener('DOMContentLoaded', () => {
   }
   animateSgv('logo', 0, 0.3)
 }, false);
+
+
+// Copy link //
+
+function copyLink() {
+  var copyText = document.getElementById("shareLink");
+  copyText.select();
+  copyText.setSelectionRange(0, 99999)
+  document.execCommand("copy");
+}
