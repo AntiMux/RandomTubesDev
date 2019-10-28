@@ -127,7 +127,7 @@ nav {
   background-color: #eeeeee;
   -webkit-transition: background-color 150ms ease-out !important;
   transition: background-color 150ms ease-out !important;
-  color: rgb(66, 66, 66);
+  color: rgb(66, 66, 66) !important;
 }
 
 @keyframes moveInIcon {
@@ -203,8 +203,9 @@ nav {
   box-sizing: border-box;
   text-align: center;
   padding: 8px 20px;
-  background-color: rgba(82, 106, 151, 0.144);
-  border: 1px solid rgba(95, 95, 95, 0.514);
+  background-color: rgba(221, 221, 221, 0.041);
+  border: 1px solid rgba(134, 134, 134, 0.514);
+  ;
   border-right: none;
 }
 
@@ -212,10 +213,10 @@ nav {
   box-sizing: border-box;
   text-align: center;
   padding: 11px 30px;
-  background-color: rgba(82, 106, 151, 0.144);
-  border: 1px solid rgba(95, 95, 95, 0.514);
+  background-color: rgba(221, 221, 221, 0.041);
+  border: 1px solid rgba(134, 134, 134, 0.514);
   font-size: 16px;
-  color: rgb(221, 221, 221);
+  color: rgb(179, 179, 179);
   letter-spacing: 0.5px;
   font-weight: lighter;
 }
@@ -226,9 +227,10 @@ nav {
 
 .shareLink-light {
   color: rgb(66, 66, 66);
-  background-color: rgb(221, 221, 221);
+  background-color: rgba(221, 221, 221, 0.041);
   border-color: rgba(134, 134, 134, 0.514);
 }
+
 
 .btn {
   width: 300px;
