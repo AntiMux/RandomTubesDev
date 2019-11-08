@@ -16,7 +16,7 @@ body {
   -webkit-transition: background-color 150ms ease-out !important;
   transition: background-color 150ms ease-out !important;
   font-family: "Roboto", sans-serif;
-  color: white;
+  color: rgb(221, 221, 221);
 }
 
 nav {
@@ -27,13 +27,15 @@ nav {
   align-items: center;
   background: rgb(3, 4, 8);
   width: 100vw;
-  height: 80px;
+  height: 70px;
   border-bottom: 1px solid rgb(29, 29, 29);
   -webkit-box-shadow: 0px -3px 10px 2px rgba(0, 0, 0, 0.12);
   -moz-box-shadow: 0px -3px 10px 2px rgba(0, 0, 0, 0.12);
   box-shadow: 0px -3px 10px 2px rgba(0, 0, 0, 0.12);
   overflow: hidden;
 }
+
+
 
 .light-Navbackground {
   background: #e0e3e4;
@@ -122,9 +124,10 @@ nav {
 }
 
 .light-background {
-  background-color: #e9e9e9;
+  background-color: #eeeeee;
   -webkit-transition: background-color 150ms ease-out !important;
   transition: background-color 150ms ease-out !important;
+  color: rgb(66, 66, 66) !important;
 }
 
 @keyframes moveInIcon {
@@ -153,30 +156,87 @@ nav {
 
 /* video */
 
-.hiddenVideo {
-  display: none;
-}
-
-.video {
-  position: relative;
-  text-align: center;
-  margin: 65px auto;
-}
-
-#theVideo {
+.contaner {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 50px auto;
   width: 990px;
-  height: 560px;
 }
+
+.theVideo {
+  width: 990px;
+  height: 540px;
+  border: none;
+}
+
+.new {
+  margin: 45px 0;
+  border-top: 1px solid rgba(153, 153, 153, 0.418);
+  padding-top: 70px;
+}
+
+.titltAndShare {
+  width: 990px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 25px 0;
+}
+
+.videoTitle {
+  align-self: flex-start;
+  font-weight: normal;
+  letter-spacing: 0.2px;
+  font-size: 24px;
+  width: 600px;
+}
+
+.share {
+  display: flex;
+  align-items: center;
+  align-self: center;
+}
+
+.shareIcon {
+  box-sizing: border-box;
+  text-align: center;
+  padding: 8px 20px;
+  background-color: rgba(221, 221, 221, 0.041);
+  border: 1px solid rgba(134, 134, 134, 0.514);
+  ;
+  border-right: none;
+}
+
+.shareLink {
+  box-sizing: border-box;
+  text-align: center;
+  padding: 11px 30px;
+  background-color: rgba(221, 221, 221, 0.041);
+  border: 1px solid rgba(134, 134, 134, 0.514);
+  font-size: 16px;
+  color: rgb(179, 179, 179);
+  letter-spacing: 0.5px;
+  font-weight: lighter;
+}
+
+.fa-share-alt {
+  margin-top: 4px;
+}
+
+.shareLink-light {
+  color: rgb(66, 66, 66);
+  background-color: rgba(221, 221, 221, 0.041);
+  border-color: rgba(134, 134, 134, 0.514);
+}
+
 
 .btn {
-  position: relative;
-  text-align: center;
   width: 300px;
   height: 70px;
-  position: relative;
   color: rgb(27, 27, 27);
   background-color: #02cb9f;
-  display: block;
   border: none;
   -webkit-border-radius: 50px;
   -moz-border-radius: 50px;
@@ -187,7 +247,7 @@ nav {
     0px 9px 25px rgba(255, 255, 255, 0.1);
   box-shadow: 0px 5px 0px rgba(1, 100, 70),
     0px 9px 25px rgba(255, 255, 255, 0.1);
-  margin: 70px auto;
+  margin: 40px auto;
   text-align: center;
   font-size: 32px;
   font-family: "Roboto", sans-serif;
@@ -243,49 +303,83 @@ button:focus {
 }
 
 @media screen and (max-width: 1024px) {
-  #theVideo {
-    width: 795px;
-    height: 550px;
+  * {
+    overflow: visible;
   }
 
-  .btn {
-    width: 300px;
-    height: 70px;
-    font-size: 30px;
-  }
-}
-
-@media only screen and (max-width: 1024px) and (orientation: landscape) {
-  #theVideo {
-    width: 100%;
-    height: 400px;
-    margin: 0;
-  }
-
-  .btn {
-    width: 300px;
-    height: 70px;
-    font-size: 30px;
-    margin-top: 55px;
+  nav {
+    margin-bottom: 50px;
   }
 
   .contaner {
-    margin: auto 70px;
+    align-items: center;
+    justify-content: center;
+    width: 80%;
+    margin: auto;
   }
-}
 
-@media screen and (max-width: 840px) {
-  #theVideo {
-    width: 600px;
-    height: 450px;
-    margin: 0;
+  .videoTitle {
+    font-size: 24px;
+  }
+
+  .theVideo {
+    width: 100%;
+    height: 540px;
+  }
+
+  .titltAndShare {
+    width: 100%;
   }
 
   .btn {
     width: 300px;
     height: 70px;
     font-size: 30px;
-    margin-top: 90px;
+    margin-bottom: 100px;
+  }
+}
+
+@media only screen and (max-width: 1366px) and (orientation: landscape) {
+  * {
+    overflow: visible;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .contaner {
+    align-items: center;
+    justify-content: center;
+    width: 95%;
+    margin: auto;
+  }
+
+  .theVideo {
+    width: 100%;
+    height: 540px;
+  }
+
+  .titltAndShare {
+    width: 100%;
+    display: inline-block;
+  }
+
+  .share {
+    margin-top: 20px;
+  }
+
+  .shareLink {
+    width: 100%;
+    text-align: start;
+  }
+
+  .btn {
+    width: 300px;
+    height: 70px;
+    font-size: 30px;
+  }
+
+  .videoTitle {
+    width: 100%;
   }
 }
 
@@ -293,6 +387,7 @@ button:focus {
   * {
     overflow: visible;
   }
+
   nav {
     height: 60px;
   }
@@ -300,6 +395,7 @@ button:focus {
   .logo svg {
     width: 180px;
   }
+
   .fa-moon,
   .fa-sun {
     margin-top: 4px;
@@ -307,16 +403,25 @@ button:focus {
   }
 
   .contaner {
-    position: relative;
-    top: -30px;
+    width: 100%;
   }
 
-  #theVideo {
-    width: 90%;
+  .new {
+    margin: 25px 0;
+    border-top: 1px solid rgba(153, 153, 153, 0.418);
+    padding-top: 40px;
+  }
+
+  .titltAndShare {
+    width: 95%;
+    margin: 15px 10px;
+  }
+
+  .theVideo {
     height: 190px;
   }
 
-  .btn {
+  /* .btn {
     position: absolute;
     top: 100%;
     left: 50%;
@@ -325,10 +430,10 @@ button:focus {
     width: 220px;
     height: 50px;
     font-size: 25px;
-  }
+  } */
 }
 
-@media only screen and (max-width: 768px) and (orientation: landscape) {
+/* @media only screen and (max-width: 768px) and (orientation: landscape) {
   .contaner {
     position: absolute;
     left: 50%;
@@ -336,7 +441,7 @@ button:focus {
     transform: translate(-70%, 0);
   }
 
-  #theVideo {
+  .theVideo {
     width: 400px;
     height: 220px;
   }
@@ -350,17 +455,18 @@ button:focus {
     height: 50px;
     font-size: 25px;
   }
-}
+} */
 
 @media screen and (max-width: 685px) {
   .logo path {
     stroke-width: 3;
   }
 
-  #theVideo {
-    width: 70%;
+  .theVideo {
+    width: 100%;
     height: 450px;
   }
+
   .fa-moon,
   .fa-sun {
     font-size: 1.4em;
@@ -371,9 +477,26 @@ button:focus {
   * {
     overflow: visible;
   }
+
+  .contaner {
+    width: 100%;
+  }
+
+  .new {
+    margin: 25px 0;
+    border-top: 1px solid rgba(153, 153, 153, 0.418);
+    padding-top: 40px;
+  }
+
+  .titltAndShare {
+    width: 95%;
+    margin: 15px 10px;
+  }
+
   nav {
     height: 70px;
     padding: 20px;
+    margin-bottom: 30px;
   }
 
   .logo svg {
@@ -386,51 +509,27 @@ button:focus {
     font-size: 1em;
   }
 
+  .shareIcon {
+    padding: 9px 20px;
+  }
+
+  .fa-share-alt {
+    padding: 1px;
+  }
+
+
   .btn {
     position: relative;
     width: 250px;
     height: 60px;
     font-size: 25px;
-    top: -70px;
-  }
-
-  .contaner {
-    text-align: center;
-  }
-
-  .video {
-    margin: 30px 0;
-  }
-
-  #theVideo {
-    margin-top: 30px;
-  }
-
-  #theVideo,
-  #theVideo3,
-  #theVideo2,
-  #theVideo4,
-  #theVideo5 {
-    width: 100% !important;
-    height: 300px !important;
-    padding-bottom: 60px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.288);
-  }
-
-  #theVideo5 {
-    border: none;
-  }
-
-  .hiddenVideo {
-    display: inline-block;
-    width: 100% !important;
-    height: 300px !important;
+    top: -30px;
   }
 }
 
 @media screen and (max-width: 435px) {
-  #theVideo {
-    width: 80%;
+  .theVideo {
+    width: 100%;
     height: 250px;
   }
 
@@ -440,6 +539,7 @@ button:focus {
     font-size: 25px;
     margin: 50px auto;
   }
+
   .logo svg {
     width: 180px;
   }
@@ -448,8 +548,18 @@ button:focus {
 @media screen and (max-width: 355px) {
   nav {
     padding: 20px;
+    margin-bottom: 20px;
   }
+
+  #theVideo {
+    height: 230px;
+  }
+
   .logo svg {
     width: 150px;
+  }
+
+  .btn {
+    margin: 40px auto;
   }
 }
