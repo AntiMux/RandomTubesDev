@@ -76,9 +76,10 @@ if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(naviga
         for (let i = 0; i < num; i++) {
             addVideoToDom();
         }
+        pause_videos();
     };
 
-    addMultipleVideos(4);
+    addMultipleVideos(1);
 
     function removeVideo() {
         document.querySelectorAll('.new').forEach(el => el.remove());
@@ -91,7 +92,7 @@ if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(naviga
     window.addEventListener('scroll', function () {
         //value of window.scrollY + window.innerHeight - the value of the current scroll or where are in the DOM at the moment
         if (window.scrollY + window.innerHeight + 350 >= document.documentElement.scrollHeight) {
-            addMultipleVideos(5);
+            addMultipleVideos(2);
         }
 
         // //values of the actual height of the DOM
