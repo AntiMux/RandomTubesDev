@@ -37,7 +37,7 @@ function updateVideoAndTitle() {
     videoLink.src = "https://www.youtube.com/embed/" + key + "?&autoplay=1";
     videoTitle.textContent = final_value;
     localStorage.setItem('current_video', JSON.stringify(key));
-    document.getElementById("shareLink").value = "http://randomtubes.net?link=" + key;
+    document.getElementById("shareLink").value = "https://www.randomtubes.net?link=" + key;
     removeFirstItemFromLS()
 }
 

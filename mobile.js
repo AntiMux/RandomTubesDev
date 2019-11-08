@@ -57,7 +57,7 @@ if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(naviga
         let final_value = clean_value.replace(/&quot;/g, "\"")
         videoElemnt.src = "https://www.youtube.com/embed/" + key + "?&autoplay=1";
         videoTitleElemnt.textContent = final_value;
-        shareLink.value = "http://randomtubes.net?link=" + key;
+        shareLink.value = "https://www.randomtubes.net?link=" + key;
         removeFirstItemFromLS()
 
 
