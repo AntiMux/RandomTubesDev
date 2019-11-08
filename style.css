@@ -190,7 +190,7 @@ nav {
   font-weight: normal;
   letter-spacing: 0.2px;
   font-size: 24px;
-  width: 600px;
+  width: 500px;
 }
 
 .share {
@@ -212,13 +212,14 @@ nav {
 .shareLink {
   box-sizing: border-box;
   text-align: center;
-  padding: 11px 30px;
+  padding: 11px 20px;
   background-color: rgba(221, 221, 221, 0.041);
   border: 1px solid rgba(134, 134, 134, 0.514);
-  font-size: 16px;
+  font-size: 14px;
   color: rgb(179, 179, 179);
   letter-spacing: 0.5px;
   font-weight: lighter;
+  width: 380px
 }
 
 .fa-share-alt {

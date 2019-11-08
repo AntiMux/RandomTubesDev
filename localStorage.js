@@ -34,8 +34,9 @@ function updateVideoAndTitle() {
     let value = video[key];
     let clean_value = value.replace(/&#39;/g, "'")
     let final_value = clean_value.replace(/&quot;/g, "\"")
+    let super_final_value = final_value.replace(/&amp;/g, "&")
     videoLink.src = "https://www.youtube.com/embed/" + key + "?&autoplay=1";
-    videoTitle.textContent = final_value;
+    videoTitle.textContent = super_final_value;
     localStorage.setItem('current_video', JSON.stringify(key));
     document.getElementById("shareLink").value = "https://www.randomtubes.net?link=" + key;
     removeFirstItemFromLS()
